@@ -191,6 +191,16 @@ def health():
         "min_query_length": MIN_QUERY_LENGTH
     }), 200
 
+# =====================================================================
+# 7. THE CANCEL ENDPOINT (Hardware interrupted the process)
+# =====================================================================
+@app.route('/cancel', methods=['POST'])
+def cancel_buddy():
+    global confusion_streak
+    confusion_streak = 0  # Reset on manual interrupt
+    print("\n[Cancel] -> Hardware aborted the query. State reset.")
+    return jsonify({"status": "cancelled"}), 200
+
 
 if __name__ == '__main__':
     print("Desk Buddy AI Server is ONLINE. Waiting for hardware pings...")
