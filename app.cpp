@@ -522,15 +522,17 @@
 // Speaker: GPIO25 (DAC1) → PAM8403 audio input
 
 // =====================================================================
-// 2. NETWORK CONFIGURATION
+// 2. NETWORK CONFIGURATION 
 // =====================================================================
-const char* ssid       = "//";
-const char* password   = "***REDACTED***";
-const char* url_ask    = "http://172.20.227.192:5000/ask";
-const char* url_cancel = "http://172.20.227.192:5000/cancel";
-const char* url_health = "http://172.20.227.192:5000/health";
-const char* url_stt    = "http://172.20.227.192:5000/stt";
-const char* url_tts    = "http://172.20.227.192:5000/tts";
+
+const char* ssid       = "YOUR_WIFI_SSID";
+const char* password   = "YOUR_WIFI_PASSWORD";
+const char* server_ip  = "YOUR_SERVER_IP"; 
+const char* url_ask    = "http://YOUR_SERVER_IP:5000/ask";
+const char* url_cancel = "http://YOUR_SERVER_IP:5000/cancel";
+const char* url_health = "http://YOUR_SERVER_IP:5000/health";
+const char* url_stt    = "http://YOUR_SERVER_IP:5000/stt";
+const char* url_tts    = "http://YOUR_SERVER_IP:5000/tts";
 
 // =====================================================================
 // 3. TIMING & ZONE CONSTANTS
