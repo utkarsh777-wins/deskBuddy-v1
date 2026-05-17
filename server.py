@@ -120,22 +120,17 @@ def call_gemini_with_retry(query: str) -> dict:
 
 
 def confused_response() -> dict:
-    """
-    Returns the appropriate confused-state response based on how many
-    consecutive garbage inputs have come in.
-    After MAX_CONFUSED_HITS, Desk Buddy escalates to a firmer prompt.
-    """
     global confusion_streak
     confusion_streak += 1
     print(f"[Confusion Streak] -> {confusion_streak}")
 
     if confusion_streak >= MAX_CONFUSED_HITS:
         return {
-            "speech": "I still can't make that out. Try speaking closer to the microphone.",
+            "speech": "I still can't make that out. Please try rephrasing your question.",
             "expression": "CONCERNED"
         }
     return {
-        "speech": "I didn't quite catch that. Could you repeat the question?",
+        "speech": "I didn't quite catch that. Could you rephrase?",
         "expression": "IDLE"
     }
 
